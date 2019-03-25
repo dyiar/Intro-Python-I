@@ -1,3 +1,3 @@
 # Print "Hello, world!" to your terminal
 
-#initial save
+print("Hello, world!")

@@ -21,4 +21,28 @@ and does the following:
 
 import sys
 import calendar
-from datetime import datetime
+from datetime import datetime, date
+
+month = input("Enter a month: ")
+year = input("Enter a year: ")
+if month == "" and year == "":
+    month = datetime.today().strftime('%m')
+    year = datetime.today().strftime('%Y')
+    print(calendar.month(int(year), int(month)))
+elif year == "" and month != None:
+    if month.isdigit():
+        year = datetime.today().strftime('%Y')
+        print(calendar.month(int(year), int(month)))
+    else:
+        print('Month should be a number.')
+elif month == "" and year != None:
+    if year.isdigit():
+        month = datetime.today().strftime('%m')
+        print(calendar.month(int(year), int(month)))
+    else:
+        print('Year should be a number.')
+else:
+    if month.isdigit() and year.isdigit():
+        print(calendar.month(int(year), int(month)))
+    else:
+        print('Month and Year should be Numbers.')
